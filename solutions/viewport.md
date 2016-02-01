@@ -1,7 +1,6 @@
 # viewport
 
-
-移动端页面的viewport设置，主要在于 `<meta>` 标签的使用，如：
+移动端页面的 viewport 设置，主要在于 `<meta>` 标签的使用，如：
 
 ```html
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
@@ -19,11 +18,31 @@ vw = MAX(screen.width / scale, width); ----------①
 
 如何设置 width 和 scale 值关系到UE图的尺寸，最终展示效果等问题。
 
+
+常见有以下三种设置方案。
+
 ## scale固定为1
 
-由①式可知，vw 为 screen.width 与 width 的最大值。由于 screen.width 理论上无上限，因此我们也不可能取到一个合适的 width 值，保证 width > screen.width，因此 vw 不可能是定值。
+由①式可知，vw 为 screen.width 与 width 的最大值。由于 screen.width 理论上无上限，因此我们也不可能取到一个合适的 width 值，保证 width > screen.width，因此 vw 不可能是定值，一般取“device-width”。
 
 在实际的操作中，必须要使用百分比或者 `Flex` 等技术才能还原UE图的宽度比例，但是 ___宽高比___ 一定无法完美还原，同时还存在着UE图尺寸的单位换算问题，如px转换百分比等，非常麻烦。
+
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<style type="text/css">
+.target {
+    width: 100%;
+    height: 50px;
+}
+.half {
+    width: 30%;
+    height: 100%;
+}
+</style>
+<div class="target">
+    <div class="half"></div>
+</div>
+```
 
 ## width固定为UE图宽度
 
@@ -36,7 +55,8 @@ scale = screen.width / width;
 __注意要将HTML元素的宽度属性强制设置为 width__。
 
 实现代码可为：
-```javascript
+```html
+<script>
    (function() {
       var base = 720;
   
@@ -60,6 +80,23 @@ __注意要将HTML元素的宽度属性强制设置为 width__。
       false);
       f();
   })();
+</script>
+<style type="text/css">
+html {
+    width: 750px; !important;
+}
+.target {
+    width: 750px;
+    height: 50px;
+}
+.half {
+    width: 375px;
+    height: 100%;
+}
+</style>
+<div class="target">
+    <div class="half"></div>
+</div>
 ```
 
 ## 动态设置scale
@@ -70,7 +107,7 @@ __注意要将HTML元素的宽度属性强制设置为 width__。
 scale = 1 / dpr;
 ```
 
-这样可以针对高DPI的屏幕，实现1物理像素的线条以及合适的响应式图片。比如对于 dpr=2 的设备，0.5px 即为1物理像素，100×100的图片可以刚好在50×50的位置上高清呈现，不会损失细节。
+这样可以针对高DPI的屏幕，实现1物理像素的线条以及合适的响应式图片。比如对于 dpr=2 的设备，0.5px 即为1物理像素，100×100 的图片可以刚好在 50×50 的位置上高清呈现，不会损失细节。
 
 那么 width 如何设置呢？根据①式，
 
@@ -78,7 +115,7 @@ scale = 1 / dpr;
 vw = MAX(screen.width * dpr, width)
 ```
 
-因此无法保证 width > screen * dpr，索性使 width = screen.width * dpr，即“device-width” 的取值。与第一种方案一样，UE图尺寸比例和单位转换成了问题。这里可以使用动态 html[font-size] 以及 rem 方案来还原UE图元素的尺寸比例，使用LESS预处理来将UE尺寸换算为 rem 值。如：
+因此无法保证 width > screen * dpr，索性使 width = screen.width * dpr，即“device-width” 的取值。与第一种方案一样，UE 图尺寸比例和单位转换成了问题。这里可以使用动态 html[font-size] 以及 rem 方案来还原UE图元素的尺寸比例，使用 LESS 预处理来将 UE 尺寸换算为 rem 值。如：
 
 ```html
 <style type="text/less">
@@ -97,8 +134,8 @@ html {
 </style>
 ```
 
-对于一张宽度750px的UE图，宽为二分之一的元素宽度为375px，换算后为5rem。
-在iPhone5上，设置 html[font-size] 为 75 * 320 / 375 = 64px，vw 为 320 / 0.5 = 640px，5rem 也刚好为 vw 的二分之一。因此可以还原UE图尺寸。
+对于一张宽度 750px 的 UE 图，宽为二分之一的元素宽度为 375px，换算后为 5rem。
+在 iPhone5 上，设置 html[font-size] 为 75 * 320 / 375 = 64px，vw 为 320 / 0.5 = 640px，5rem 也刚好为 vw 的二分之一。因此可以还原UE图尺寸。
 
 该方案实现见[flexible-viewport](https://github.com/yanni4night/flexible-viewport)。
 
