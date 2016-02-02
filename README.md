@@ -3,7 +3,7 @@ A bundle of mobile web solution
 
 |Function|Solution|
 |----|----|
-|viewport|[viewport](solutions/viewport.md)|
+|viewport|[viewport](solutions/viewport/)|
 |media query||
 |font||
 |animate||
