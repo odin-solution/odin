@@ -9,6 +9,9 @@ A bundle of mobile web solution
 |viewport|[viewport](solutions/viewport/)|
 |media query|[media query](solutions/media-query/)|
 |font||
+|pull to refresh||
+|page slider||
+|router||
 |animate||
 |canvas||
 |audio||
