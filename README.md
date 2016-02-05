@@ -8,7 +8,7 @@ A bundle of mobile web solution
 |----|----|
 |viewport|[viewport](solutions/viewport/)|
 |media query|[media query](solutions/media-query/)|
-|font||
+|font|[media query](solutions/font/)|
 |pull to refresh||
 |page slider||
 |router||
