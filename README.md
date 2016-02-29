@@ -12,7 +12,7 @@ A bundle of mobile web solution
 |pull to refresh||
 |page slider||
 |router||
-|animate||
+|animate|[animate](solutions/animate/|
 |canvas||
 |audio||
 |video||
