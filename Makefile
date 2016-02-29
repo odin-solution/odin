@@ -5,6 +5,7 @@ remote:
 	git remote add -f media-query git@github.com:yanni4night/odin-solution-media-query.git
 	git remote add -f font git@github.com:yanni4night/odin-solution-font.git
 	git remote add -f animate git@github.com:yanni4night/odin-solution-animate.git
+	git remote add -f audio git@github.com:yanni4night/odin-solution-audio.git
 push:
 	git push origin master
 subpush:
@@ -12,8 +13,10 @@ subpush:
 	git subtree push --prefix=solutions/media-query media-query master
 	git subtree push --prefix=solutions/font font master
 	git subtree push --prefix=solutions/animate animate master
+	git subtree push --prefix=solutions/audio audio master
 subpull:
 	git subtree pull --prefix=solutions/viewport viewport master
 	git subtree pull --prefix=solutions/media-query media-query master
 	git subtree pull --prefix=solutions/font font master
 	git subtree pull --prefix=solutions/animate animate master
+	git subtree pull --prefix=solutions/audio audio master

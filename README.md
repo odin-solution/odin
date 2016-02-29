@@ -12,8 +12,8 @@ A bundle of mobile web solution
 |pull to refresh||
 |page slider||
 |router||
-|animate|[animate](solutions/animate/|
+|animate|[animate](solutions/animate/)|
 |canvas||
-|audio||
+|audio|[audio](solutions/audio/)|
 |video||
 |vdom||
