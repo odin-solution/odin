@@ -4,7 +4,7 @@ remote:
 	git remote add -f viewport git@github.com:yanni4night/odin-solution-viewport.git
 	git remote add -f media-query git@github.com:yanni4night/odin-solution-media-query.git
 	git remote add -f font git@github.com:yanni4night/odin-solution-font.git
-	git remote add -f font git@github.com:yanni4night/odin-solution-animate.git
+	git remote add -f animate git@github.com:yanni4night/odin-solution-animate.git
 push:
 	git push origin master
 subpush:
