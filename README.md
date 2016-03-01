@@ -9,7 +9,7 @@ A bundle of mobile web solutions.
 |viewport|[viewport](solutions/viewport/)|
 |media query|[media query](solutions/media-query/)|
 |font|[font](solutions/font/)|
-|event||
+|event|[event](solutions/event/)|
 |pagination||
 |lazyload||
 |file uploader||
