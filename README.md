@@ -11,7 +11,7 @@ A bundle of mobile web solutions.
 |font|[font](solutions/font/)|
 |event|[event](solutions/event/)|
 |pagination||
-|lazyload||
+|lazyload|[lazyload](solutions/lazyload/)|
 |file uploader||
 |pull to refresh||
 |page slider||
