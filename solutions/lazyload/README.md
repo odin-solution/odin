@@ -1,10 +1,14 @@
 # lazyload
 
-[lazyload](https://github.com/verlok/lazyload) 无依赖，不支持iframe，5kb compressed。
+[lazyload](https://github.com/verlok/lazyload) 无依赖，支持iframe，5kb compressed。
 
 ```html
-<img data-original="http://img2.3lian.com/2014/f5/158/d/88.jpg"/>
+<img data-original="http://...jpg"/>
+<iframe data-original="http://...html"/>
 <script>
-    new LazyLoad();
+    new LazyLoad({
+        elements_selector: "img,iframe",
+        show_while_loading: true,
+    });
 </script>
 ```

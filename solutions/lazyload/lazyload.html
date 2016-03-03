@@ -22,9 +22,15 @@
         <div class="row"><img data-original="http://img2.3lian.com/2014/f5/158/d/86.jpg" alt=""></div>
         <div class="row"><img data-original="http://p18.qhimg.com/t0144d6a0802f22be4f.jpg" alt=""></div>
         <div class="row"><img data-original="http://img2.3lian.com/2014/f5/158/d/91.jpg" alt=""></div>
+        <div class="row">
+            <iframe data-original="./lazyload.js" frameborder="0"></iframe>
+        </div>
     </body>
     <script src="lazyload.js"></script>
     <script type="text/javascript">
-        new LazyLoad();
+        new LazyLoad({
+            elements_selector: "img,iframe",
+            show_while_loading: true
+        });
     </script>
 </html>
