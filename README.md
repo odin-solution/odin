@@ -12,6 +12,7 @@ A bundle of mobile web solutions.
 |event|[event](solutions/event/)|
 |pagination||
 |lazyload|[lazyload](solutions/lazyload/)|
+|date format|[date format](solutions/date-format)|
 |file uploader||
 |pull to refresh||
 |page slider||
