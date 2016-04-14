@@ -1,14 +1,14 @@
 default:
 	@echo 'make [remote|push|subpush|subpull]'
 remote:
-	git remote add -f viewport git@github.com:yanni4night/odin-solution-viewport.git
-	git remote add -f media-query git@github.com:yanni4night/odin-solution-media-query.git
-	git remote add -f font git@github.com:yanni4night/odin-solution-font.git
-	git remote add -f animate git@github.com:yanni4night/odin-solution-animate.git
-	git remote add -f audio git@github.com:yanni4night/odin-solution-audio.git
-	git remote add -f event git@github.com:yanni4night/odin-solution-event.git
-	git remote add -f lazyload git@github.com:yanni4night/odin-solution-lazyload.git
-	git remote add -f date-format git@github.com:yanni4night/odin-solution-date-format.git
+	git remote add -f viewport git@github.com:odin-solution/odin-solution-viewport.git
+	git remote add -f media-query git@github.com:odin-solution/odin-solution-media-query.git
+	git remote add -f font git@github.com:odin-solution/odin-solution-font.git
+	git remote add -f animate git@github.com:odin-solution/odin-solution-animate.git
+	git remote add -f audio git@github.com:odin-solution/odin-solution-audio.git
+	git remote add -f event git@github.com:odin-solution/odin-solution-event.git
+	git remote add -f lazyload git@github.com:odin-solution/odin-solution-lazyload.git
+	git remote add -f date-format git@github.com:odin-solution/odin-solution-date-format.git
 push:
 	git push origin master
 subpush:
